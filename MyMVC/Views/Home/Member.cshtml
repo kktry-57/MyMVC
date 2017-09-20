@@ -1,0 +1,25 @@
+﻿@model List<MyMVC.Models.MemberViewModel>
+@{
+    ViewBag.Title = "Member";
+}
+
+<h2>Member</h2>
+
+@{ 
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.First().ID)</td>
+            <td>@Html.LabelFor(model => model.First().Name)</td>
+            <td>@Html.LabelFor(model => model.First().PhoneNo)</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>               
+                <td>@Html.DisplayFor(model => item.ID)</td>            
+                <td>@Html.DisplayFor(model => item.Name)</td>
+                <td>@Html.DisplayFor(model => item.PhoneNo)</td>
+            </tr>
+        }        
+    </table>
+}
+
