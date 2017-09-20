@@ -1,0 +1,51 @@
+﻿@model MyMVC.Models.MemberViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.ID)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.ID);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Name)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Name);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.PhoneNo)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.PhoneNo);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Department)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Department);
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <button type="submit" onclick="submit" >新增</button>
+            </td>
+            <td>
+                <button onclick="location.href ='@Url.Action("Member")'">取消</button>
+            </td>
+        </tr>
+</table>
+}
